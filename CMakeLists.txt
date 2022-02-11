@@ -3,4 +3,4 @@ project(SoSe22_Cpp_a1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SoSe22_Cpp_a1 main.cpp)
+add_executable(SoSe22_Cpp_a1 main.cpp Ui.cpp Ui.h Complex.h Complex.cpp)
