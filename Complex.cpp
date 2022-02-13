@@ -36,7 +36,7 @@ void Complex::calculate_pol() {
 }
 
 void Complex::print() {
-    std::cout << "Realteil: " << k_x << " Imaginaerteil: " << k_y << " Phasenwinkel: " << p_t << " Betrag: " << p_r << std::endl;
+    std::cout << "Realteil: " << k_x << " Imaginaerteil: " << k_y << " Phasenwinkel (RAD): " << p_t << " Betrag: " << p_r << std::endl;
 }
 
 double *Complex::get_kart(double *kart) {

@@ -55,6 +55,7 @@ void Ui::anwendung() {
             default:
                 //input is undefined
                 cout << "Eingabe unbekannt, bitte erneut versuchen" << endl << endl;
+                break;
         }
         cout << endl << "------------------------------------------------------------------" << endl;
     }
