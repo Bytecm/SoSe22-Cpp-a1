@@ -62,14 +62,4 @@ void Ui::anwendung() {
 
     cout << "Auf Wiedersehen!" << endl;
 
-/*
-    Complex complex1;
-    complex1.set_cart(3.00, 5.00);
-
-    Complex complex2;
-    complex2.set_polar(1.03038, 5.83095);
-
-    complex1.print();
-    complex2.print();
-    */
 }
