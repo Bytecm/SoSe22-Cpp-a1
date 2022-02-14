@@ -11,8 +11,13 @@ using namespace std;
 void Ui::anwendung() {
     bool running = true;
     char mode;
-    Complex complex;
+    Complex complex(5,3);
+    Complex complex2(0,0,30.9638,5.83095);
+    complex.print();
+    complex2.print();
 
+
+    /*
     //loop for Dialog
     while (running) {
         cout << "Willkommen beim Komplexen Zahlen konverter" << endl;
@@ -59,6 +64,7 @@ void Ui::anwendung() {
         }
         cout << endl << "------------------------------------------------------------------" << endl;
     }
+    */
 
     cout << "Auf Wiedersehen!" << endl;
 

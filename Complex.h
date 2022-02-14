@@ -18,6 +18,17 @@ public:
         p_complex = 0.00;
     }
 
+    Complex(double real = 0.00, double imag = 0.00, double theta = 0.00, double complex = 0.00) {
+        this->set_cart(real, imag);
+        this->set_polar(theta, complex);
+        if (real == 0.00 && imag == 0.00) {
+            this->calculate_cart();
+        } else {
+            this->calculate_pol();
+        }
+    }
+
+
     void set_cart(double real, double imag);  //Setting all cartesian values
 
     void set_polar(double theta, double complex); //setting all polar

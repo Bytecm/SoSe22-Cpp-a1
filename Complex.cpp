@@ -26,8 +26,8 @@ void Complex::set_complex(double complex) {
 }
 
 void Complex::calculate_cart() {
-    c_real = p_complex * cos(p_theta);
-    c_imag = p_complex * sin(p_theta);
+    c_real = p_complex * cos(p_theta * (M_PI / 180));
+    c_imag = p_complex * sin(p_theta * (M_PI / 180));
 }
 
 void Complex::calculate_pol() {
@@ -42,13 +42,13 @@ void Complex::print() {
 void Complex::set_cart(double real, double imag) {
     c_real = real;
     c_imag = imag;
-    this->calculate_pol();
+    //this->calculate_pol();
 }
 
 void Complex::set_polar(double theta, double complex) {
     p_complex = complex;
-    p_theta = theta * (M_PI / 180);
-    this->calculate_cart();
+    p_theta = theta;
+    //this->calculate_cart();
 }
 
 void Complex::print_cart() {
@@ -58,4 +58,3 @@ void Complex::print_cart() {
 void Complex::print_pol() {
     std::cout << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
 }
-
