@@ -30,14 +30,14 @@ void Ui::anwendung() {
                 cout << endl <<"Bitte geben sie den Imaginaerteil ein: ";
                 cin >> y;
                 //set input in the Object, Calculate it and print it
-                complex.set_kart(x, y);
+                complex.set_cart(x, y);
                 cout << endl <<"Ergebnis:" << endl;
-                complex.print();
+                complex.print_pol();
                 break;
             case 'p':
                 cout << "Gewaehlter Modus: Polar Form" << endl;
                 //get the Input variables
-                cout << "Bitte geben sie den Phasenwinkel ein: ";
+                cout << "Bitte geben sie den Phasenwinkel (GRAD) ein: ";
                 double p, t;
                 cin >> p;
                 cout << endl <<"Bitte geben sie den Betrag ein: ";
@@ -45,7 +45,7 @@ void Ui::anwendung() {
                 //set input in the Object, Calculate it and print it
                 complex.set_polar(p, t);
                 cout << endl <<"Ergebnis:" << endl;
-                complex.print();
+                complex.print_cart();
                 break;
             case 'e':
                 //user requested exit -> settung running to false so that the loop can break
@@ -64,7 +64,7 @@ void Ui::anwendung() {
 
 /*
     Complex complex1;
-    complex1.set_kart(3.00, 5.00);
+    complex1.set_cart(3.00, 5.00);
 
     Complex complex2;
     complex2.set_polar(1.03038, 5.83095);

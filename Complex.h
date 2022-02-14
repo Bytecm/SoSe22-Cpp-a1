@@ -10,40 +10,43 @@ class Complex {
 
 public:
 
-    Complex(){
-        k_x = 0.00;
-        k_y = 0.00;
-        p_t = 0.00;
-        p_r = 0.00;
+    //Fix for non empty initial value
+    Complex() {
+        c_real = 0.00;
+        c_imag = 0.00;
+        p_theta = 0.00;
+        p_complex = 0.00;
     }
 
-    void set_kart(double x, double y);
+    void set_cart(double real, double imag);  //Setting all cartesian values
 
-    void set_polar(double t, double r);
+    void set_polar(double theta, double complex); //setting all polar
 
-    void set_x(double x);
+    void set_real(double real);   //set real part
 
-    void set_y(double y);
+    void set_imag(double imag); //set imaginal part
 
-    void set_theta(double theta);
+    void set_theta(double theta);   //set theta
 
-    void set_r(double r);
+    void set_complex(double complex);   //set complex
 
-    void print();
+    void print();   //print cartesian and polar values
 
-    double* get_kart(double *kart);
+    void print_cart();  //print cartesian values
 
-    double* get_pol(double *pol);
-
-    void calculate_kart();
-
-    void calculate_pol();
+    void print_pol();   //print polar values
 
 private:
-    double k_x;
-    double k_y;
-    double p_t;
-    double p_r;
+    //cartesian values
+    double c_real;
+    double c_imag;
+    //polar values
+    double p_theta;
+    double p_complex;
+
+    void calculate_cart();  //calculate cartesian from polar
+
+    void calculate_pol();   //calculate polar from cartesian
 };
 
 #endif //SOSE22_CPP_A1_COMPLEX_H

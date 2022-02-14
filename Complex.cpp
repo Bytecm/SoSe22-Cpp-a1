@@ -5,61 +5,57 @@
 #include <cmath>
 #include "Complex.h"
 
-void Complex::set_x(double x) {
-    k_x = x;
+void Complex::set_real(double real) {
+    c_real = real;
     this->calculate_pol();
 }
 
-void Complex::set_y(double y) {
-    k_y = y;
+void Complex::set_imag(double imag) {
+    c_imag = imag;
     this->calculate_pol();
 }
 
 void Complex::set_theta(double t) {
-    p_t = t;
-    this->calculate_kart();
+    p_theta = t * (M_PI / 180);
+    this->calculate_cart();
 }
 
-void Complex::set_r(double r) {
-    p_r = r;
-    this->calculate_kart();
+void Complex::set_complex(double complex) {
+    p_complex = complex;
+    this->calculate_cart();
 }
 
-void Complex::calculate_kart() {
-    k_x = p_r * cos(p_t);
-    k_y = p_r * sin(p_t);
+void Complex::calculate_cart() {
+    c_real = p_complex * cos(p_theta);
+    c_imag = p_complex * sin(p_theta);
 }
 
 void Complex::calculate_pol() {
-    p_r = sqrt( (k_x * k_x) + (k_y * k_y));
-    p_t = atan( k_y / k_x);
+    p_complex = sqrt((c_real * c_real) + (c_imag * c_imag));
+    p_theta = atan(c_imag / c_real) * (180 / M_PI);
 }
 
 void Complex::print() {
-    std::cout << "Realteil: " << k_x << " Imaginaerteil: " << k_y << " Phasenwinkel (RAD): " << p_t << " Betrag: " << p_r << std::endl;
+    std::cout << "Realteil: " << c_real << std::endl << "Imaginaerteil: " << c_imag << std::endl << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
 }
 
-double *Complex::get_kart(double *kart) {
-    kart[0] = k_x;
-    kart[1] = k_y;
-    return kart;
-}
-
-double *Complex::get_pol(double *pol) {
-    pol[0] = p_r;
-    pol[1] = p_t;
-    return pol;
-}
-
-void Complex::set_kart(double x, double y) {
-    k_x = x;
-    k_y = y;
+void Complex::set_cart(double real, double imag) {
+    c_real = real;
+    c_imag = imag;
     this->calculate_pol();
 }
 
-void Complex::set_polar(double t, double r) {
-    p_r = r;
-    p_t = t;
-    this->calculate_kart();
+void Complex::set_polar(double theta, double complex) {
+    p_complex = complex;
+    p_theta = theta * (M_PI / 180);
+    this->calculate_cart();
+}
+
+void Complex::print_cart() {
+    std::cout << "Realteil: " << c_real << std::endl << "Imaginaerteil: " << c_imag << std::endl;
+}
+
+void Complex::print_pol() {
+    std::cout << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
 }
 
