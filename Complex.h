@@ -18,9 +18,8 @@ public:
         p_complex = 0.00;
     }
 
-    Complex(double real = 0.00, double imag = 0.00, double theta = 0.00, double complex = 0.00) {
-        this->set_cart(real, imag);
-        this->set_polar(theta, complex);
+    
+    Complex(double real = 0.00, double imag = 0.00, double theta = 0.00, double complex = 0.00):c_real(real), c_imag(imag), p_theta(theta), p_complex(complex) {
         if (real == 0.00 && imag == 0.00) {
             this->calculate_cart();
         } else {
@@ -41,11 +40,11 @@ public:
 
     void set_complex(double complex);   //set complex
 
-    void print();   //print cartesian and polar values
+    void print() const;   //print cartesian and polar values
 
-    void print_cart();  //print cartesian values
+    void print_cart() const;  //print cartesian values
 
-    void print_pol();   //print polar values
+    void print_pol() const;   //print polar values
 
 private:
     //cartesian values

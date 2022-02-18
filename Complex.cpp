@@ -35,7 +35,7 @@ void Complex::calculate_pol() {
     p_theta = atan(c_imag / c_real) * (180 / M_PI);
 }
 
-void Complex::print() {
+void Complex::print() const{
     std::cout << "Realteil: " << c_real << std::endl << "Imaginaerteil: " << c_imag << std::endl << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
 }
 
@@ -51,10 +51,10 @@ void Complex::set_polar(double theta, double complex) {
     //this->calculate_cart();
 }
 
-void Complex::print_cart() {
+void Complex::print_cart() const{
     std::cout << "Realteil: " << c_real << std::endl << "Imaginaerteil: " << c_imag << std::endl;
 }
 
-void Complex::print_pol() {
+void Complex::print_pol() const{
     std::cout << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
 }
