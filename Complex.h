@@ -5,6 +5,8 @@
 #ifndef SOSE22_CPP_A1_COMPLEX_H
 #define SOSE22_CPP_A1_COMPLEX_H
 
+#include <string>
+
 
 class Complex {
 
@@ -40,11 +42,11 @@ public:
 
     void set_complex(double complex);   //set complex
 
-    void print() const;   //print cartesian and polar values
+    std::string toString() const;   //toString cartesian and polar values
 
-    void print_cart() const;  //print cartesian values
+    std::string cartToString() const;  //toString cartesian values
 
-    void print_pol() const;   //print polar values
+    std::string polarToString() const;   //toString polar values
 
 private:
     //cartesian values

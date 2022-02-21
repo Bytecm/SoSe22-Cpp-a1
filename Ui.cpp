@@ -11,10 +11,10 @@ using namespace std;
 void Ui::anwendung() {
     bool running = true;
     char mode;
-    Complex complex(5,3);
-    Complex complex2(0,0,30.9638,5.83095);
-    complex.print();
-    complex2.print();
+    Complex complex(5, 3);
+    Complex complex2(0, 0, 30.9638, 5.83095);
+    cout << complex.toString();
+    cout << complex2.toString();
 
 
     /*
@@ -37,7 +37,7 @@ void Ui::anwendung() {
                 //set input in the Object, Calculate it and print it
                 complex.set_cart(x, y);
                 cout << endl <<"Ergebnis:" << endl;
-                complex.print_pol();
+                cout << complex.polarToString();
                 break;
             case 'p':
                 cout << "Gewaehlter Modus: Polar Form" << endl;
@@ -47,10 +47,10 @@ void Ui::anwendung() {
                 cin >> p;
                 cout << endl <<"Bitte geben sie den Betrag ein: ";
                 cin >> t;
-                //set input in the Object, Calculate it and print it
+                //set input in the Object, Calculate it and toString it
                 complex.set_polar(p, t);
                 cout << endl <<"Ergebnis:" << endl;
-                complex.print_cart();
+                cout << complex.cartToString();
                 break;
             case 'e':
                 //user requested exit -> settung running to false so that the loop can break
@@ -64,8 +64,7 @@ void Ui::anwendung() {
         }
         cout << endl << "------------------------------------------------------------------" << endl;
     }
-    */
-
     cout << "Auf Wiedersehen!" << endl;
+     */
 
 }

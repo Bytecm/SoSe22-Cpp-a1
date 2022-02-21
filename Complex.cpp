@@ -35,8 +35,9 @@ void Complex::calculate_pol() {
     p_theta = atan(c_imag / c_real) * (180 / M_PI);
 }
 
-void Complex::print() const{
-    std::cout << "Realteil: " << c_real << std::endl << "Imaginaerteil: " << c_imag << std::endl << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
+std::string Complex::toString() const{
+    std::string result = "Realteil: " + std::to_string(c_real) + "\n" + "Imaginaerteil: " + std::to_string(c_imag) + "\n" + "Phasenwinkel (GRAD): " + std::to_string(p_theta) + "\n" + "Betrag: " + std::to_string(p_complex) + "\n";
+    return result;
 }
 
 void Complex::set_cart(double real, double imag) {
@@ -51,10 +52,12 @@ void Complex::set_polar(double theta, double complex) {
     //this->calculate_cart();
 }
 
-void Complex::print_cart() const{
-    std::cout << "Realteil: " << c_real << std::endl << "Imaginaerteil: " << c_imag << std::endl;
+std::string Complex::cartToString() const{
+    std::string result = "Realteil: " + std::to_string(c_real) + "\n" + "Imaginaerteil: " + std::to_string(c_imag) + "\n";
+    return result;
 }
 
-void Complex::print_pol() const{
-    std::cout << "Phasenwinkel (GRAD): " << p_theta << std::endl << "Betrag: " << p_complex << std::endl;
+std::string Complex::polarToString() const{
+    std::string result = "Phasenwinkel (GRAD): " + std::to_string(p_theta) + "\n" + "Betrag: " + std::to_string(p_complex) + "\n";
+    return result;
 }
