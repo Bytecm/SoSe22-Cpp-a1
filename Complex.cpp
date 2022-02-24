@@ -5,6 +5,8 @@
 #include <cmath>
 #include "Complex.h"
 
+int Complex::instance_count = 0;
+
 void Complex::set_real(double real) {
     c_real = real;
     this->calculate_pol();

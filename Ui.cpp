@@ -11,11 +11,18 @@ using namespace std;
 void Ui::anwendung() {
     bool running = true;
     char mode;
+    cout << "Anzahl an Complex instanzen " << Complex::instance_count << endl;
     Complex complex(5, 3);
+    cout << "Anzahl an Complex instanzen " << Complex::instance_count << endl;
     Complex complex2(0, 0, 30.9638, 5.83095);
+    cout << "Anzahl an Complex instanzen " << Complex::instance_count << endl;
     cout << complex.toString();
     cout << complex2.toString();
 
+    Complex a(1.0, -2.0);
+    cout << "Anzahl an Complex instanzen " << Complex::instance_count << endl;
+    Complex b(a);
+    cout << "Anzahl an Complex instanzen " << Complex::instance_count << endl;
 
     /*
     //loop for Dialog

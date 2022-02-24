@@ -18,17 +18,29 @@ public:
         c_imag = 0.00;
         p_theta = 0.00;
         p_complex = 0.00;
+        instance_count++;
     }
 
-    
-    Complex(double real = 0.00, double imag = 0.00, double theta = 0.00, double complex = 0.00):c_real(real), c_imag(imag), p_theta(theta), p_complex(complex) {
+
+    Complex(double real = 0.00, double imag = 0.00, double theta = 0.00, double complex = 0.00) : c_real(real),
+                                                                                                  c_imag(imag),
+                                                                                                  p_theta(theta),
+                                                                                                  p_complex(complex) {
         if (real == 0.00 && imag == 0.00) {
             this->calculate_cart();
         } else {
             this->calculate_pol();
         }
+        instance_count++;
     }
 
+    Complex( const Complex& input_complex){
+        instance_count++;
+    }
+
+    ~Complex() {
+        Complex::instance_count--;
+    }
 
     void set_cart(double real, double imag);  //Setting all cartesian values
 
@@ -48,6 +60,8 @@ public:
 
     std::string polarToString() const;   //toString polar values
 
+    static int instance_count;
+
 private:
     //cartesian values
     double c_real;
@@ -60,5 +74,6 @@ private:
 
     void calculate_pol();   //calculate polar from cartesian
 };
+
 
 #endif //SOSE22_CPP_A1_COMPLEX_H
